@@ -82,11 +82,11 @@ $RECYCLE.BIN/
 postgres_data/
 qdrant_storage/
 
-chatwoot/.env
-n8n/.env
-ollama/.env
-postgres/.env
-chatwoot/.env
-qdrant/.env
-redis/.env
+# chatwoot/.env
+# n8n/.env
+# ollama/.env
+# postgres/.env
+# chatwoot/.env
+# qdrant/.env
+# redis/.env
 

@@ -40,9 +40,11 @@ Ollama es el servicio de administración de modelos de inteligencia artificial, 
 
 Para realizar el depliegue es necesario realizar los sigiuentes pasos:
 
-**1.** Crear una red en docker, esta nos ayuda a la comunicación de los contenedores de manera interna, pasa su creación usaremos el comando:
+1. Crear una red en docker, esta nos ayuda a la comunicación de los contenedores de manera interna, pasa su creación usaremos el comando:
 
 ``` bash
 docker network create <nombre_para_la_red>
 ```
 
+2. Configuración de chatwoot
+    
