@@ -47,7 +47,7 @@ docker network create <nombre_para_la_red>
 ```
 
 2. Configuración de chatwoot
-    2.1 usamos `docker-compose pull`, para descargar las imagenes de cada uno de los contenedores, referenciados en el `docker-compose.yaml`
-    2.2 Configuramos los valores para las variables de entorno de redis y postgres que se instala con el `docker-compose` de chatwood, las variables a configurar son `POSTGRES_PASSWORD`, `REDIS_PASSWORD`, `FRONTEND_URL` esta colocaremos `localhost` para poder usar local mente y luego poder mapear en el proxi inverso, `DEFAULT_LOCALE` para el idioma predeterminado y por ultimo `SECRET_KEY_BASE` que lo usa para la parte de seguidad, estas variables las modificaremos en el archivo `.env`.
-    2.3 debemos usarl el comando `docker compose run --rm rails bundle exec rails db:chatwoot_prepare` para inicializar la base de datos que usara chatwoot.
-    2.4 ejecutar `docker-compose up -d`
+ 2.1 usamos `docker-compose pull`, para descargar las imagenes de cada uno de los contenedores, referenciados en el `docker-compose.yaml`
+ 2.2 Configuramos los valores para las variables de entorno de redis y postgres que se instala con el `docker-compose` de chatwood, las variables a configurar son `POSTGRES_PASSWORD`, `REDIS_PASSWORD`, `FRONTEND_URL` esta colocaremos `localhost` para poder usar local mente y luego poder mapear en el proxi inverso, `DEFAULT_LOCALE` para el idioma predeterminado y por ultimo `SECRET_KEY_BASE` que lo usa para la parte de seguidad, estas variables las modificaremos en el archivo `.env`.
+ 2.3 debemos usarl el comando `docker compose run --rm rails bundle exec rails db:chatwoot_prepare` para inicializar la base de datos que usara chatwoot.
+ 2.4 ejecutar `docker-compose up -d`
