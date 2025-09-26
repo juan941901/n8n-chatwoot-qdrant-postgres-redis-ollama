@@ -36,6 +36,19 @@ Redis es la base de datos en memoria, se usaria como alternativa para el context
 
 Ollama es el servicio de administración de modelos de inteligencia artificial, con el cual se instala el modelo llama3.2 de `META` para el asistente y embeddinggemma de `GOOGLE` para realizar el proceso de embedding de los datos para la base de conocimiento.
 
+## Puertos configurados para cada servicio
+
+La siguiente información hace referencia a los puertos establecidos para cada uno de los servicios dentro del contenedor, estos los encontraran dentro de la etiqueta `ports` en el archivo `docker-compose.yaml` de cada servicio.
+
+### Puertos
+
+- n8n: 5678
+- chatwoot: 3000
+- qdrant: 6333
+- postgres: 5432
+- ollama: 11434
+- redis: pendiente por configurar
+
 ## Proceso de configuración
 
 Para realizar el depliegue es necesario realizar los sigiuentes pasos:
