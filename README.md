@@ -35,3 +35,14 @@ Redis es la base de datos en memoria, se usaria como alternativa para el context
 ### ollama
 
 Ollama es el servicio de administración de modelos de inteligencia artificial, con el cual se instala el modelo llama3.2 de `META` para el asistente y embeddinggemma de `GOOGLE` para realizar el proceso de embedding de los datos para la base de conocimiento.
+
+## Proceso de configuración
+
+Para realizar el depliegue es necesario realizar los sigiuentes pasos:
+
+**1.** Crear una red en docker, esta nos ayuda a la comunicación de los contenedores de manera interna, pasa su creación usaremos el comando:
+
+``` bash
+docker network create <nombre_para_la_red>
+```
+
