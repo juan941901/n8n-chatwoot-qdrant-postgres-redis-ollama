@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n
+    container_name: n8n
+    ports:
+      - "5678:5678"
+    networks:
+      - mi_red_compartida
+    environment:
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_DATABASE=${POSTGRESDB_DATABASE}
+      - DB_POSTGRESDB_HOST=${POSTGRESDB_HOST}
+      - DB_POSTGRESDB_PORT=${POSTGRESDB_PORT}
+      - DB_POSTGRESDB_USER=${POSTGRESDB_USER}
+      - DB_POSTGRESDB_SCHEMA=${POSTGRESDB_SCHEMA}
+      - DB_POSTGRESDB_PASSWORD=${POSTGRESDB_PASSWORD}
+      - TZ=${TZ_N8N}
+      - WEBHOOK_URL=${WEBHOOK_URL}
+    volumes:
+      - n8n_data:/home/node/.n8n
+    restart: unless-stopped
+
+volumes:
+  n8n_data:
+
+networks:
+  mi_red_compartida:
+    external: true

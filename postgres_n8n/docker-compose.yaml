@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: n8n_postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=${POSTGRESDB_USER}
+      - POSTGRES_PASSWORD=${POSTGRESDB_PASSWORD}
+      - POSTGRES_DB=${POSTGRESDB_SCHEMA}
+      - TZ=${TZ}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - mi_red_compartida
+volumes:
+  postgres_data:
+
+networks:
+  mi_red_compartida:
+    external: true

@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qdrant
+    environment:
+      QDRANT__SERVICE__API_KEY: 5F7EtDbzlLyTsDrAUroseMglRKCRx8FS
+    ports:
+      - "6333:6333" 
+    volumes:
+      - qdrant_data:/qdrant/storage
+    networks:
+      - mi_red_compartida
+
+volumes:
+  qdrant_data:
+
+networks:
+  mi_red_compartida:
+    external: true
