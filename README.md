@@ -46,8 +46,24 @@ Para realizar el depliegue es necesario realizar los sigiuentes pasos:
 docker network create <nombre_para_la_red>
 ```
 
-2. Configuración de chatwoot
+2. Configuración de chatwoot:
     - 2.1 usamos `docker-compose pull`, para descargar las imagenes de cada uno de los contenedores, referenciados en el `docker-compose.yaml`.
     - 2.2 Configuramos los valores para las variables de entorno de redis y postgres que se instala con el `docker-compose` de chatwood, las variables a configurar son `POSTGRES_PASSWORD`, `REDIS_PASSWORD`, `FRONTEND_URL` esta colocaremos `localhost` para poder usar local mente y luego poder mapear en el proxi inverso, `DEFAULT_LOCALE` para el idioma predeterminado y por ultimo `SECRET_KEY_BASE` que lo usa para la parte de seguidad, estas variables las modificaremos en el archivo `.env`.
     - 2.3 debemos usarl el comando `docker compose run --rm rails bundle exec rails db:chatwoot_prepare` para inicializar la base de datos que usara chatwoot.
     - 2.4 ejecutar `docker-compose up -d`.
+3. Configuración n8n:
+    - 3.1 ejecutar `docker-compose pull`, para descargar las imagenes de cada uno de los contenedores, referenciados en el `docker-compose.yaml`.
+    - 3.2 Se deben configurar las variables de entorno dentro del archivo `.env`.
+    - 3.3 ejecutar `docker-compose up -d`.
+4. Configuración de postgres:
+    - 4.1 ejecutar `docker-compose pull`, para descargar las imagenes de cada uno de los contenedores, referenciados en el `docker-compose.yaml`.
+    - 4.2 Se deben configurar las variables de entorno dentro del archivo `.env`.
+    - 4.3 ejecutar `docker-compose up -d`.
+5. Configuración de qdrant:
+    - 5.1 ejecutar `docker-compose pull`, para descargar las imagenes de cada uno de los contenedores, referenciados en el `docker-compose.yaml`.
+    - 5.2 Se deben configurar la variables de entorno `QDRANT__SERVICE__API_KEY` dentro del archivo `docker-compose.yaml` con una cadena de texto de un largo de treita y dos caracteres.
+    - 5.3 ejecutar `docker-compose up -d`.
+6. Configuración ollama
+    - 6.1 ejecutar `docker-compose pull`, para descargar las imagenes de cada uno de los contenedores, referenciados en el `docker-compose.yaml`.
+    - 6.2 ejecutar `docker-compose up -d`, para subir el contenedor.
+    - 6.3 Descargar la imagen del modelo a utilizar, para este ejemplo usaremos `llama3.2` de META, para debemos ejecutar el comando `docker exec -it ollama ollama pull llama3.2:latest`, validar etiqueta del modelo en [Ollama](https://ollama.com/search) 
